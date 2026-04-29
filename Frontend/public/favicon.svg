@@ -1,0 +1,23 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!--
+    FAVICON - 32x32
+    ITE: all white on shield
+  -->
+  <defs>
+    <linearGradient id="fg" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#0059b3"/>
+      <stop offset="100%" stop-color="#002d5a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Shield body -->
+  <path d="M16 2 L30 7 L30 20 Q30 28 16 31 Q2 28 2 20 L2 7 Z" fill="url(#fg)"/>
+  <!-- Green accent bar -->
+  <rect x="2" y="7" width="28" height="1.8" fill="#00A859" rx="0.3"/>
+
+  <!-- ITE: all white -->
+  <text x="16" y="23"
+        font-family="'Inter','Roboto',Arial,sans-serif"
+        font-size="9" font-weight="800"
+        fill="white" text-anchor="middle" letter-spacing="1.5">ITE</text>
+</svg>

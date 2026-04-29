@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRight, CalendarClock } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
@@ -16,6 +17,13 @@ export function FinalCTA() {
               aria-hidden="true"
               className="pointer-events-none absolute -right-10 -bottom-20 h-72 w-72 rounded-full bg-brand-500/30 blur-3xl"
             />
+            {/* Brand watermark */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -right-8 top-1/2 hidden -translate-y-1/2 opacity-[0.07] sm:block"
+            >
+              <Image src="/stacked_logo.svg" alt="" width={220} height={257} />
+            </div>
             <div className="relative">
               <h2 className="heading-lg text-white">
                 Ready to accelerate your digital insurance journey?

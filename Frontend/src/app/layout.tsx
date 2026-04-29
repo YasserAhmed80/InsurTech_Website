@@ -34,6 +34,10 @@ export const metadata: Metadata = {
     "Legacy Modernization",
   ],
   metadataBase: new URL("https://insurtech-egypt.com"),
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
   openGraph: {
     title:
       "InsurTech-Egypt — Empowering the Future of Insurance with Smart, Scalable Digital Solutions",

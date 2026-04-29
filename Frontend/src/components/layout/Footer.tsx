@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { MapPin, ShieldCheck } from "lucide-react";
+import Image from "next/image";
+import { MapPin } from "lucide-react";
 import { companyInfo, navLinks } from "@/lib/data/content";
 
 export function Footer() {
@@ -7,13 +8,13 @@ export function Footer() {
     <footer className="relative bg-brand-700">
       <div className="container-x grid gap-12 py-16 lg:grid-cols-4">
         <div className="lg:col-span-2">
-          <Link href="/" className="flex items-center gap-2.5">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/15">
-              <ShieldCheck className="h-5 w-5 text-white" aria-hidden="true" />
-            </span>
-            <span className="font-display text-lg font-semibold text-white">
-              {companyInfo.name}
-            </span>
+          <Link href="/" className="inline-block">
+            <Image
+              src="/main_logo_white.svg"
+              alt={companyInfo.name}
+              width={220}
+              height={50}
+            />
           </Link>
           <p className="mt-5 max-w-md text-sm leading-relaxed text-brand-200">
             Empowering insurance organizations with innovative insurance

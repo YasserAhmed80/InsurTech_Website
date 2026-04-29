@@ -1,9 +1,27 @@
-import { Banknote, Rocket, ShieldCheck, Sparkles } from "lucide-react";
-import { companyInfo } from "@/lib/data/content";
+import Image from "next/image";
+import { ArrowRight, Banknote, Rocket, ShieldCheck, Sparkles } from "lucide-react";
+import { companyInfo, stats } from "@/lib/data/content";
+import { Button } from "@/components/ui/Button";
+
+const heroStats = [
+  { value: `${stats.experience}+`, label: "Years of Experience" },
+  { value: `${stats.projects}+`, label: "Projects Delivered" },
+  { value: `${stats.coreApps}+`, label: "Core Applications" },
+  { value: `${stats.satisfaction}%`, label: "Client Satisfaction" },
+] as const;
 
 export function Hero() {
   return (
     <section className="relative flex min-h-[calc(100svh-4rem)] sm:min-h-[calc(100svh-5rem)] flex-col overflow-hidden bg-brand-700">
+
+      {/* Brand watermark — decorative, not announced to screen readers */}
+      <div
+        className="pointer-events-none absolute right-0 top-1/2 hidden -translate-y-1/2 translate-x-1/3 opacity-[0.06] lg:block"
+        aria-hidden="true"
+      >
+        <Image src="/brand_icon.svg" alt="" width={560} height={560} priority />
+      </div>
+
       <div className="container-x relative my-auto grid items-center gap-16 py-24 sm:py-32 lg:grid-cols-12 lg:py-40">
         <div className="lg:col-span-7">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-white/90">
@@ -22,6 +40,16 @@ export function Hero() {
           <p className="mt-2 max-w-2xl text-base text-white/60">
             {companyInfo.subline}
           </p>
+
+          {/* CTA buttons */}
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <Button href="/contact" size="lg" onDark>
+              Get a Free Consultation
+            </Button>
+            <Button href="/#services" variant="secondary" size="lg" onDark>
+              Explore Services <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Button>
+          </div>
         </div>
 
         <div className="relative lg:col-span-5">
@@ -73,6 +101,19 @@ export function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Stats strip */}
+      <div className="relative border-t border-white/10">
+        <div className="container-x grid grid-cols-2 gap-y-8 py-10 sm:grid-cols-4 sm:gap-y-0 sm:divide-x sm:divide-white/10">
+          {heroStats.map(({ value, label }) => (
+            <div key={label} className="text-center sm:px-8">
+              <p className="font-display text-3xl font-bold text-white sm:text-4xl">{value}</p>
+              <p className="mt-1.5 text-xs font-medium uppercase tracking-[0.12em] text-white/50">{label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
     </section>
   );
 }

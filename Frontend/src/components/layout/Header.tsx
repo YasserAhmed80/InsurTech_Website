@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, ShieldCheck, X } from "lucide-react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/cn";
 import { navLinks, companyInfo } from "@/lib/data/content";
@@ -20,15 +21,27 @@ export function Header() {
       <div className="container-x flex h-16 items-center justify-between sm:h-20">
         <Link
           href="/"
-          className="group flex items-center gap-2.5"
+          className="group flex items-center"
           aria-label={`${companyInfo.name} home`}
         >
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/15 shadow-soft">
-            <ShieldCheck className="h-5 w-5 text-white" aria-hidden="true" />
-          </span>
-          <span className="font-display text-lg font-semibold tracking-tight text-white">
-            {companyInfo.name}
-          </span>
+          {/* Mobile: icon only */}
+          <Image
+            src="/brand_icon.svg"
+            alt={companyInfo.name}
+            width={40}
+            height={40}
+            priority
+            className="block sm:hidden"
+          />
+          {/* Desktop: full horizontal logo */}
+          <Image
+            src="/main_logo_white.svg"
+            alt={companyInfo.name}
+            width={200}
+            height={46}
+            priority
+            className="hidden sm:block"
+          />
         </Link>
 
         <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">

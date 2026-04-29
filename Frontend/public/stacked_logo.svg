@@ -1,0 +1,61 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 250" width="240" height="250">
+  <!--
+    STACKED / PORTRAIT VERSION - 240x280
+    InsurTech-Egypt: all #003B73
+    ITE: all white (on shield)
+    Better=#003B73  Cheaper=#E63946  Faster=#00A859 — bold
+    Insurance Technology Partner: bold, #003B73
+  -->
+  <defs>
+    <linearGradient id="sg" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#0059b3"/>
+      <stop offset="100%" stop-color="#002d5a"/>
+    </linearGradient>
+    <linearGradient id="sh" x1="0%" y1="0%" x2="10%" y2="65%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="ds" x="-15%" y="-5%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#001a3d" flood-opacity="0.3"/>
+    </filter>
+    <style>.lf{font-family:'Inter','Roboto',Arial,sans-serif;}</style>
+  </defs>
+
+  <!-- Shield: centred at x=120, peak y=8, bottom ~y=148 -->
+  <path d="M120 8 L184 28 L184 85 Q184 128 120 148 Q56 128 56 85 L56 28 Z"
+        fill="url(#sg)" filter="url(#ds)"/>
+  <path d="M120 8 L184 28 L184 85 Q184 128 120 148 Q56 128 56 85 L56 28 Z"
+        fill="url(#sh)"/>
+  <path d="M120 14 L178 32 L178 85 Q178 124 120 142 Q62 124 62 85 L62 32 Z"
+        fill="none" stroke="white" stroke-width="1" opacity="0.18"/>
+  <rect x="56" y="28" width="128" height="5" fill="#00A859" rx="1"/>
+
+  <!-- ITE: all white -->
+  <text x="120" y="105" class="lf" font-size="44" font-weight="800"
+        fill="white" text-anchor="middle" letter-spacing="7">ITE</text>
+  <line x1="76" y1="116" x2="164" y2="116" stroke="white" stroke-width="1.2" opacity="0.22"/>
+
+  <!-- Divider -->
+  <line x1="36" y1="163" x2="204" y2="163" stroke="#003B73" stroke-width="0.8" opacity="0.15"/>
+
+  <!-- Company Name: InsurTech-Egypt all #003B73 -->
+  <text x="120" y="188" class="lf" font-size="24" font-weight="700"
+        fill="#003B73" text-anchor="middle">InsurTech-Egypt</text>
+
+  <!-- Values: BETTER=Blue  CHEAPER=Red  FASTER=Green — bold, directly under name -->
+  <text x="120" y="206" class="lf" font-size="11" font-weight="700"
+        text-anchor="middle" letter-spacing="2">
+    <tspan fill="#003B73" font-weight="700">BETTER</tspan>
+    <tspan fill="#BBBBBB" font-weight="700"> · </tspan>
+    <tspan fill="#E63946" font-weight="700">CHEAPER</tspan>
+    <tspan fill="#BBBBBB" font-weight="700"> · </tspan>
+    <tspan fill="#00A859" font-weight="700">FASTER</tspan>
+  </text>
+
+  <!-- Divider -->
+  <line x1="56" y1="215" x2="184" y2="215" stroke="#003B73" stroke-width="0.7" opacity="0.12"/>
+
+  <!-- Tagline: bold, #003B73 -->
+  <text x="120" y="233" class="lf" font-size="10" font-weight="700"
+        fill="#003B73" text-anchor="middle" letter-spacing="0.8">Insurance Technology Partner</text>
+</svg>
