@@ -32,7 +32,7 @@ export function Footer() {
           <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-white">
             Navigate
           </h3>
-          <ul className="mt-5 space-y-3 text-sm">
+          <ul className="mt-5 space-y-2 text-sm">
             <li>
               <Link className="text-brand-200 hover:text-white transition-colors" href="/">
                 Home
@@ -57,14 +57,14 @@ export function Footer() {
           <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-white">
             CR / Tax ID
           </h3>
-          <dl className="mt-5 space-y-3 text-sm text-brand-200">
-            <div className="flex justify-between gap-4">
-              <dt>CR</dt>
-              <dd className="text-white">{companyInfo.cr}</dd>
+          <dl className="mt-5 space-y-4 text-sm">
+            <div>
+              <dt className="text-brand-200">Commercial Registration</dt>
+              <dd className="mt-1 text-white">{companyInfo.cr}</dd>
             </div>
-            <div className="flex justify-between gap-4">
-              <dt>Tax ID</dt>
-              <dd className="text-white">{companyInfo.taxId}</dd>
+            <div>
+              <dt className="text-brand-200">Tax ID</dt>
+              <dd className="mt-1 text-white">{companyInfo.taxId}</dd>
             </div>
           </dl>
         </div>
