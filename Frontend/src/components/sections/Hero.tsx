@@ -27,19 +27,26 @@ export function Hero() {
         <div className="grid w-full items-center gap-8 py-8 lg:grid-cols-12 lg:gap-12 lg:py-10">
           <div className="lg:col-span-7">
 
-            {/* Mobile-only logo — top of hero, full width */}
-            <div className="mb-6 lg:hidden">
-              <Image
-                src="/main_logo_white.svg"
-                alt={companyInfo.name}
-                width={390}
-                height={115}
-                className="h-24 w-full object-contain sm:h-28"
-                priority
-              />
+            {/* Mobile-only: logo + pill inside a frosted card */}
+            <div className="mb-7 lg:hidden">
+              <div className="flex flex-col items-center gap-3 rounded-2xl border border-white/15 bg-white/[0.08] px-6 py-5 shadow-soft backdrop-blur-sm">
+                <Image
+                  src="/main_logo_white.svg"
+                  alt={companyInfo.name}
+                  width={390}
+                  height={115}
+                  className="h-20 w-full object-contain sm:h-24"
+                  priority
+                />
+                <div className="h-px w-full bg-white/10" />
+                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
+                  <Sparkles className="h-3 w-3 text-accent-400" /> Insurance Technology Partner
+                </span>
+              </div>
             </div>
 
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-white/90">
+            {/* Desktop-only pill */}
+            <span className="hidden lg:inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-white/90">
               <Sparkles className="h-3.5 w-3.5" /> Insurance Technology Partner
             </span>
             <h1 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
