@@ -27,14 +27,14 @@ export function Hero() {
         <div className="grid w-full items-center gap-8 py-8 lg:grid-cols-12 lg:gap-12 lg:py-10">
           <div className="lg:col-span-7">
 
-            {/* Mobile-only logo — top of hero, large and centred */}
-            <div className="mb-6 flex justify-center lg:hidden">
+            {/* Mobile-only logo — top of hero, full width */}
+            <div className="mb-6 lg:hidden">
               <Image
                 src="/main_logo_white.svg"
                 alt={companyInfo.name}
-                width={320}
-                height={74}
-                className="h-auto w-[260px] sm:w-[300px]"
+                width={390}
+                height={115}
+                className="h-24 w-full object-contain sm:h-28"
                 priority
               />
             </div>

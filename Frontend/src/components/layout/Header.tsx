@@ -37,8 +37,8 @@ export function Header() {
           <Image
             src="/main_logo_white.svg"
             alt={companyInfo.name}
-            width={348}
-            height={80}
+            width={390}
+            height={115}
             priority
             className="hidden sm:block h-full w-auto"
           />
