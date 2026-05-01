@@ -9,6 +9,10 @@ applications:
         build:
           commands:
             - npm run build
+          env:
+            - GOOGLE_SERVICE_ACCOUNT_EMAIL
+            - GOOGLE_PRIVATE_KEY
+            - GOOGLE_SHEET_ID
       artifacts:
         baseDirectory: .next
         files:

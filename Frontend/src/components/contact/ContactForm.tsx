@@ -27,7 +27,9 @@ function validate(values: FormState): Errors {
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
     errors.email = "Please enter a valid email address.";
   }
-  if (values.phone && !/^[+\d()\-\s]{7,}$/.test(values.phone)) {
+  if (!values.phone.trim()) {
+    errors.phone = "Please enter your phone number.";
+  } else if (!/^[+\d()\-\s]{7,}$/.test(values.phone)) {
     errors.phone = "Please enter a valid phone number.";
   }
   if (!values.subject.trim()) errors.subject = "Please add a subject.";
@@ -113,6 +115,7 @@ export function ContactForm() {
           onChange={(v) => update("phone", v)}
           error={errors.phone}
           autoComplete="tel"
+          required
         />
         <Input
           id="subject"

@@ -23,10 +23,12 @@ function getAuth() {
 
 /** Server-side validation — mirrors client but is authoritative. */
 function validate(body: Record<string, unknown>): string | null {
-  const { name, email, subject, message } = body;
+  const { name, email, phone, subject, message } = body;
   if (!name || typeof name !== "string" || !name.trim()) return "Name is required.";
   if (!email || typeof email !== "string" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
     return "Valid email is required.";
+  if (!phone || typeof phone !== "string" || !phone.trim()) return "Phone number is required.";
+  if (!/^[+\d()\-\s]{7,}$/.test(phone.trim())) return "Please enter a valid phone number.";
   if (!subject || typeof subject !== "string" || !subject.trim()) return "Subject is required.";
   if (!message || typeof message !== "string" || message.trim().length < 10)
     return "Message must be at least 10 characters.";
